@@ -1,9 +1,17 @@
 import os
 import json
 
-with open('data.json', 'r') as file:
-    welcome_text = json.load(file)
 
+def get_text(filename='data.json'):
+    if filename in os.listdir(os.path.join(__file__)):
+        with open(os.path.join(__file__, filename), 'r') as file:
+            data = json.load(file)
+    else:
+        data: dict = {}
+        data['answer1']['text'] = 'Текст отсутствует'
+        with open(os.path.join(__file__, filename), 'x') as file:
+            file.write(json.dumps(data))
+    return data
 #
 # class Text:
 #     __filename: str = 'data.json'
