@@ -6,6 +6,7 @@ def get_text(filename='data.json'):
     if filename in os.listdir(os.getcwd()):
         with open(os.path.join(os.getcwd(), filename), 'r') as file:
             data = json.load(file)
+        return data['answer1']['text']
     else:
         file = open(os.path.join(os.getcwd(), filename), 'w')
         file.close()
