@@ -3,14 +3,8 @@ import json
 
 
 def get_text(filename='data.json'):
-    if filename in os.listdir(os.path.join(__file__)):
-        with open(os.path.join(__file__, filename), 'r') as file:
-            data = json.load(file)
-    else:
-        data: dict = {}
-        data['answer1']['text'] = 'Текст отсутствует'
-        with open(os.path.join(__file__, filename), 'x') as file:
-            file.write(json.dumps(data))
+    with open(os.path.join(__file__, filename), 'r') as file:
+        data = json.load(file)
     return data
 #
 # class Text:

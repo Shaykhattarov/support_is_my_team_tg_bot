@@ -10,7 +10,7 @@ dp = Dispatcher(bot)
 
 
 @dp.message_handler(command=['start'])
-async def information_text(message: types.Message):
+async def welcome_command(message: types.message):
     await message.reply(texts.get_text(filename), reply_markup=kb.inline_link_to_questionnaire_kb)
 
 
