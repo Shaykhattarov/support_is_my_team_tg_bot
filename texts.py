@@ -4,7 +4,7 @@ import json
 
 class Text:
     __filename: str = 'data.json'
-    welcome_text: str
+    welcome_text: str = 'Привет'
 
     def __init__(self):
         self.welcome_text = self.read_json_file(self.__filename)["answer1"]["text"]
