@@ -16,4 +16,4 @@ async def welcome_command(message: types.message):
 
 if __name__ == "__main__":
     filename: str = 'data.json'
-    executor.start_polling(dp)
+    executor.start_polling(dp, skip_updates=True)

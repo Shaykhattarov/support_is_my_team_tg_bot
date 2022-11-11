@@ -3,9 +3,15 @@ import json
 
 
 def get_text(filename='data.json'):
-    with open(os.path.join(__file__, filename), 'r') as file:
-        data = json.load(file)
-    return data
+    if filename in os.listdir(os.getcwd()):
+        with open(os.path.join(os.getcwd(), filename), 'r') as file:
+            data = json.load(file)
+    else:
+        file = open(os.path.join(os.getcwd(), filename), 'w')
+        file.close()
+        return 'Текст отсутсвует!'
+
+
 #
 # class Text:
 #     __filename: str = 'data.json'
