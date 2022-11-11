@@ -9,7 +9,7 @@ bot = Bot(token=os.getenv("OPORA_MY_TEAM_TOKEN"))
 dp = Dispatcher(bot)
 
 
-@dp.message_handler(command=['start'])
+@dp.message_handler(commands=['start'])
 async def welcome_command(message: types.message):
     await message.reply(texts.get_text(filename), reply_markup=kb.inline_link_to_questionnaire_kb)
 
